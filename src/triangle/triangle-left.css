@@ -1,0 +1,65 @@
+
+.tri[k-mode~='left']:before{
+    top:5px;
+    left: -10px;
+    border: 5px solid transparent;
+    border-right: 5px solid #ccc;
+}
+.tri[k-mode~='left']:after{
+    top:5px;
+    left: -9px;
+    border: 5px solid transparent;
+    border-right: 5px solid #fff;
+}
+
+.tri[k-mode~='left'].tri[k-mode~="10"]:before {
+    border-width: 10px;
+    left: -20px;
+}
+
+.tri[k-mode~='left'].tri[k-mode~="10"]:after {
+    border-width: 10px;
+    left: -19px;
+}
+
+.tri[k-mode~='left'].tri[k-mode~="15"]:before {
+    border-width: 15px;
+    left: -30px;
+}
+.tri[k-mode~='left'].tri[k-mode~="15"]:after {
+    border-width: 15px;
+    left: -29px;
+}
+
+.tri[k-mode~='left'].tri[k-mode~="bg-gray" ]:after{
+    border-right-color:#ccc;
+}
+.tri[k-mode~='left'].tri[k-mode~="bg-white" ]:after{
+    border-right-color:#fff;
+}
+.tri[k-mode~='left'].tri[k-mode~="bg-red" ]:after{
+    border-right-color:#f4333c;
+}
+.tri[k-mode~='left'].tri[k-mode~="bg-blue" ]:after{
+    border-right-color:#00aaee;
+}
+.tri[k-mode~='left'].tri[k-mode~="bg-yellow" ]:after{
+    border-right-color:#ffc600;
+}
+
+
+.tri[k-mode~='left'].tri[k-mode~="bd-white" ]:before{
+    border-right-color:#fff;
+}
+.tri[k-mode~='left'].tri[k-mode~="bd-gray" ]:before{
+    border-right-color:#ccc;
+}
+.tri[k-mode~='left'].tri[k-mode~="bd-red" ]:before{
+    border-right-color:#f4333c;
+}
+.tri[k-mode~='left'].tri[k-mode~="bd-blue" ]:before{
+    border-right-color:#00aaee;
+}
+.tri[k-mode~='left'].tri[k-mode~="bd-yellow" ]:before{
+    border-right-color:#ffc600;
+}

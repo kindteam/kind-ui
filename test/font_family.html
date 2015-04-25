@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link type="text/css" rel="stylesheet" href="css/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+</head>
+<body>
+
+<p id="ua" class="fn-f12"></p>
+<p class="fn-f12">
+    font-family: Georgia, "Times New Roman",
+    "Microsoft YaHei", "微软雅黑",
+    STXihei, "华文细黑",
+    serif;(顺序：先英文后中文，中文的英文和中文都要写)
+</p>
+<p class="fn-f12">
+    由于Windows和Mac的中文字体没有交叉，所以应该同时为两个平台指定字体。
+    常见的做法是，Windows平台指定"微软雅黑"（Microsoft YaHei），Mac平台指定"华文细黑"（STXihei）。
+</p>
+<p class="fn-f12">一般黑体和雅黑比较粗，不应用于较小的字号。</p>
+<p class="fn-f12">
+    <pre>
+    Windows
+    黑体：SimHei (这个可能用来代替雅黑)
+    微软雅黑：Microsoft YaHei （Windows 7开始提供）
+    宋体：SimSun
+    新宋体：NSimSun
+    仿宋：FangSong
+    楷体：KaiTi
+    仿宋GB2312：FangSongGB2312
+    楷体GB2312：KaiTiGB2312
+    </pre>
+</p>
+<p class="fn-f12">
+    <pre>
+    Mac OS
+    冬青黑体: Hiragino Sans GB （SNOW LEOPARD开始提供）
+    华文细黑：STHeiti Light （又名STXihei）(常用)
+    华文黑体：STHeiti
+    华文楷体：STKaiti
+    华文宋体：STSong
+    华文仿宋：STFangsong
+    </pre>
+</p>
+
+<p class="fn-f12">
+    <pre>
+     "衬线体"（Serif）
+     "无衬线体"（San-serif）
+    </pre>
+</p>
+
+<div class="fonts">
+    <!--<p class="sans-serif" data-fontFamily="sans-serif">-->
+        <!--<span>字体和颜色，我在支付宝工作。</span>-->
+        <!--<span>,.~～!！@#</span>-->
+        <!--<span>$￥%</span>-->
+        <!--<span>^&* ()（） _-+……</span>-->
+        <!--<span>0123456789</span>-->
+    <!--</p>-->
+</div>
+<script>
+
+    $('#ua').html(navigator.userAgent);
+
+    var CONF = [
+        ['guifan', '比较规范'],
+        ['sans-serif', 'sans-serif'],
+        ['tahoma', 'tahoma'],
+        ['arial', 'arial'],
+        ['yahei', 'yahei'],
+        ['songti', 'songti'],
+        ['Helvetica', 'Helvetica'],
+        ['Hiragino', 'Hiragino'],
+        ['withsmoothing', '-webkit-font-smoothing'],
+        ['MicrosoftYaHei', 'MicrosoftYaHei']
+    ];
+
+    var HTML = [];
+    $.each(CONF, function (_, item) {
+        var frag = [
+            '<p class="' + item[0] + '" data-fontFamily="' + item[1] + '">',
+            '<span>字体和颜色</span>',
+            '<span class="fn-f12">我在支付宝工作</span>',
+            '<span>,.~～!！@#</span>',
+            '<span>$￥%</span>',
+            '<span>^&* ()（） _-+……</span>',
+            '<span>0123456789</span>',
+            '<span>This is what I thought!</span>',
+            '</p>'
+        ].join('');
+        HTML.push(frag);
+    });
+
+    $('.fonts').append($(HTML.join('')));
+
+</script>
+
+</body>
+</html>

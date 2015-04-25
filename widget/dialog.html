@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="Dialog.js"></script>
+    <link rel="stylesheet" type="text/css" href="dialog.css">
+    <style></style>
+</head>
+<body>
+
+<button id="simple">simple</button>
+<button id="simple2">simple2 width Title</button>
+
+<div style="background: red;width: 100px;height: 1000px">
+
+</div>
+<!--<div class="kind-dialog">-->
+    <!--<a class="kind-dialog-close">×</a>-->
+
+    <!--<div class="kind-dialog-container">-->
+        <!--<div class="kind-dialog-title">提示消息</div>-->
+
+        <!--<div class="kind-dialog-content">-->
+
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<script>
+
+        var d = new Dialog({
+            trigger:'#simple',
+//            title:'我的世界',
+            content:'大家的世界',
+            isLock:true,
+//            classPrefix:'a-'
+//            timeClose:1
+//            hasMask:false
+        })
+
+        var d2 = new Dialog({
+            trigger:'#simple2',
+            title:'我的世界',
+            content:'大家的世界2',
+//            classPrefix:'a-'
+//            timeClose:1
+            hasMask:false,
+            quickClose:false
+        })
+
+</script>
+
+</body>
+</html>

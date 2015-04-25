@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<script>
+
+//    onerror = function(a, b ,c ) {
+//        alert(a);
+//        alert('line:' + c)
+//    }
+
+    var fontBreak = {
+        title:'省略不换号',
+        headCols: [
+            {
+                text: '样式'
+            },
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: 'ft-underline',
+                    className:'ft-bold'
+                },
+                {
+                    text: '<div class="ft-underline">文字有下划线</div>',
+                    strip:false
+
+                },
+                {
+                    text: '<div class="ft-underline">文字有下划线</div>',
+                    strong:["ft-underline"]
+                }
+            ],
+            [
+                {
+                    text: 'ft-ellipsis',
+                    className:'ft-bold'
+                },
+                {
+                    text: '<span class="ft-ellipsis" style="width: 100px;display: block;border: 1px dashed #000;">文字超出了截断超出了文字超出了</span>',
+                    strip:false
+
+                },
+                {
+                    text: '<div class="ft-ellipsis">文字超出了截断，必须要设置width</div>',
+//                    strong:"ft-ellipsis"
+                    strong:["ft-ellipsis", '必须要设置width']
+                }
+            ],
+            [
+                {
+                    text: 'ft-nowrap',
+                    className:'ft-bold'
+                },
+                {
+                    text: '<span class="ft-nowrap" style="width: 55px;display: block;border: 1px dashed #000">文字超出不换行</span>',
+                    strip:false
+
+                },
+                {
+                    text: '<div class="ft-nowrap">文字超出不换行</div>',
+                    strong:["ft-nowrap"]
+                }
+            ]
+        ],
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var fontWeight = {
+        title:'文字粗细',
+        headCols: [
+            {
+                text: '样式'
+            },
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: 'ft-normal',
+                    className:'ft-bold'
+                },
+                {
+                    text: '文字粗细',
+                    className: 'ft-normal',
+                    style: {
+                        width: '200px'
+                    }
+                },
+                {
+                    text: '<div class="ft-normal">文字粗细</div>',
+                    strong:'ft-normal'
+                }
+            ],
+            [
+                {
+                    text: 'ft-bold',
+                    className:'ft-bold'
+                },
+                {
+                    text: '文字粗细',
+                    className: 'ft-bold',
+                    style: {
+                        width: '200px'
+                    }
+                },
+                {
+                    text: '<div class="ft-bold">文字粗细</div>',
+                    strong:'ft-bold'
+                }
+            ]
+        ],
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+    var fontAlign = {
+        title:'对齐方式',
+        headCols: [
+            {
+                text: '样式'
+            },
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: 'ft-left',
+                    className:'ft-bold'
+                },
+                {
+                    text: '文字对齐方式',
+                    className: 'ft-left',
+                    style: {
+                        width: '200px'
+                    }
+                },
+                {
+                    text: '<div class="ft-left">对齐</div>',
+                    strong:"ft-left"
+                }
+            ],
+            [
+                {
+                    text: 'ft-right',
+                    className:'ft-bold'
+                },
+                {
+                    text: '文字对齐方式',
+                    className: 'ft-right',
+                    style: {
+                        width: '200px'
+                    }
+                },
+                {
+                    text: '<div class="ft-right">对齐</div>',
+                    strong:"ft-right"
+                }
+            ],
+            [
+                {
+                    text: 'ft-center',
+                    className:'ft-bold'
+                },
+                {
+                    text: '文字对齐方式',
+                    className: 'ft-center',
+                    style: {
+                        width: '200px'
+                    }
+                },
+                {
+                    text: '<div class="ft-center">对齐</div>',
+                    strong:"ft-center"
+                }
+            ]
+        ],
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+
+    parseTable(fontAlign);
+    parseTable(fontWeight);
+    parseTable(fontBreak);
+
+
+</script>
+</body>
+</html>

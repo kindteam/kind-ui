@@ -1,0 +1,11 @@
+
+
+.k-btn.k-btn-blue {
+    background-color: #0be;
+    border-color: #0be;
+    color: #fff;
+}
+.k-btn.k-btn-blue:hover, .k-btn.k-btn-blue:active {
+    background-color: #00a3d2;
+    border-color: #00a3d2;
+}

@@ -1,0 +1,55 @@
+
+.k-form-item {
+    font-size: 0;
+    margin-bottom: 13px;
+}
+
+.k-form-title {
+    height: 32px;
+    width: 150px;
+    padding-right: 10px;
+    text-indent: 10px;
+    font-size: 14px;
+    line-height: 32px;
+
+    display: inline-block;
+    text-align: right;
+}
+
+.k-form-title-desc{
+    font-size: 12px;
+    margin-left: 5px;
+    color: #808080;
+}
+
+.k-form-tip {
+    margin-left: 160px;
+    padding-top: 5px;
+    height: 12px;
+    line-height: 12px;
+    font-size: 12px;
+    color: #808080;
+}
+
+.k-form-item-error .k-form-tip {
+    color: #f4333c;
+}
+.k-form-title-require:before{
+    content: '*';
+    display: inline-block;
+    margin-right: 5px;
+    color: #f4333c;
+}
+.k-form-vertical .k-form-title{
+    display: block;
+    margin-left: 150px;
+    width: auto;
+    text-align: left;
+    height: 14px;
+    line-height: 14px;
+    padding-bottom: 10px;
+}
+.k-form-vertical .k-input{
+    display: block;
+    margin-left: 160px;
+}

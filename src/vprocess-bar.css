@@ -1,0 +1,106 @@
+.vprocess-bar{
+    width: 250px;
+}
+.vprocess-bar-item{
+    position: relative;
+
+    margin-bottom: 20px;
+}
+.vprocess-bar-item:before{
+    content:'';
+
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: 13px;
+    width: 1px;
+    height: 20px;
+    border-left: 1px solid #808080;
+}
+.vprocess-bar-item:first-child:before {
+    content:'';
+    width: 0;
+    height: 0;
+    display: none;
+}
+.vprocess-bar-item i{
+    position: absolute;
+
+    left: 8px;
+    top: 2px;
+    font-size: 20px;
+    line-height: 20px;
+    color: #fff;
+    z-index: 2;
+    font-family: tahoma;
+    font-style: normal;
+}
+.vprocess-bar-title{
+    height: 26px;
+    line-height: 26px;
+    padding-left: 35px;
+    font-size: 14px;
+    color: #808080;
+}
+.vprocess-bar-text{
+    margin-left: 13px;
+
+    border-left: 1px solid #808080;
+    padding-left: 23px;
+    color: #a6a6a6;
+}
+
+
+.vprocess-bar-item .vprocess-bar-title:before {
+    font-family: "kindfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    font-size: 26px;
+    line-height: 26px;
+    color: #808080;
+    content: "\e616";
+}
+.vprocess-bar-item.tip .vprocess-bar-title:before {
+    content: "\e605";
+}
+.vprocess-bar-item.warn .vprocess-bar-title:before {
+    content: "\e604";
+}
+.vprocess-bar-item.wait .vprocess-bar-title:before {
+    content: "\e607";
+}
+.vprocess-bar-item.success .vprocess-bar-title:before {
+    content: "\e602";
+}
+.vprocess-bar-item.error .vprocess-bar-title:before {
+    content: "\e603";
+}
+
+
+.vprocess-bar-item.active:before{
+    border-color: #0be;
+}
+.vprocess-bar-item.active .vprocess-bar-title:before{
+    color: #0be;
+}
+.vprocess-bar-item.active .vprocess-bar-text{
+    border-left: 1px solid #0be;
+}
+
+
+.vprocess-bar-item.active-red .vprocess-bar-title:before{
+    color: #f4333c;
+}
+.vprocess-bar-item.active-red .vprocess-bar-text{
+    border-color:#f4333c;
+}
+.vprocess-bar-item.active-red:before{
+    border-color: #f4333c;
+}

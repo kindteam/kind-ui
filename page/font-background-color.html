@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<script>
+    var fontColorConf = {
+        title:'字体颜色',
+        headCols: [
+            {
+                text: '样式'
+            },
+            {
+                text: 'hex'
+            },
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body: (function () {
+            var results = [];
+            var classList = [
+                'black',
+                'darkgray',
+                'gray',
+                'lightgray',
+                'white',
+                'blue',
+                'orange',
+                'green',
+                'red'
+            ];
+
+            $.each(classList, function(_, item) {
+                var className = 'ft-' + item;
+
+                var tmp = [
+                    {
+                        text:className,
+                        className:className + ' ft-bold',
+                        style:(function(){
+                            if(className == 'ft-white'){
+                                return {
+                                    background:'black'
+                                }
+                            }
+                            return {};
+                        })()
+                    },
+                    {
+                        text:'',
+                        attrs:{
+                            hex:'hex'
+                        }
+
+                    },
+                    {
+                        text:'文字颜色',
+                        className:className,
+
+                        style:(function(){
+                            if(className == 'ft-white'){
+                                return {
+                                    background:'black'
+                                }
+                            }
+                            return {};
+                        })()
+                    },
+                    {
+                        text:'<span class="'+className+'">'+className+'</span>',
+                        strong:className
+                    }
+                ];
+                results[results.length] = tmp;
+
+            });
+
+
+            return results;
+        })(),
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+            $table.find('[hex="hex"]').each(function (_, hex) {
+                var $hex = $(this);
+                var className = $(this).prev()[0].className;
+                var color = convert2Hex($hex.prev().css('color'));
+                $hex.text(color);
+            });
+
+        }
+    };
+
+
+    var backgroundConf = {
+        title:'背景颜色',
+        headCols: [
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            },
+            {
+                text:'描述'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: '报错颜色',
+                    className:'bg-red ft-white example-tdClass'
+                },
+                {
+                    text: '<div class="bg-red ft-white">报错颜色</div>',
+                    strong:"bg-red"
+                },
+                {
+                    text:'报错颜色'
+                }
+            ],
+            [
+                {
+                    text: '成功颜色',
+                    className:'bg-blue ft-white example-tdClass'
+                },
+                {
+                    text: '<div class="bg-blue ft-white">成功颜色</div>',
+                    strong:"bg-blue"
+                },
+                {
+                    text:'成功颜色'
+                }
+            ],
+            [
+                {
+                    text: '警告颜色',
+                    className:'bg-orange ft-white example-tdClass'
+                },
+                {
+                    text: '<div class="bg-orange ft-white">警告颜色</div>',
+                    strong:"bg-orange"
+                },
+                {
+                    text:'警告颜色'
+                }
+            ],[
+                {
+                    text: '绿色未定义',
+                    className:'bg-green ft-white example-tdClass'
+                },
+                {
+                    text: '<div class="bg-green ft-white">绿色未定义</div>',
+                    strong:"bg-green"
+                },
+                {
+                    text:'绿色未定义'
+                }
+            ]
+        ],
+        onRendered: function ($table) {
+            $('#rs').append($table);
+        }
+    };
+
+     parseTable(fontColorConf);
+     parseTable(backgroundConf);
+
+
+</script>
+</body>
+</html>

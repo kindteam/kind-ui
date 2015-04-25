@@ -1,0 +1,31 @@
+.k-btn{
+    display: inline-block;
+    box-sizing: border-box;
+    height: 32px;
+    line-height: 32px;
+    margin: 0;
+    padding: 0 24px;
+    outline: 0;
+    border: 1px solid #ccc;
+    background-image: none;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1a1a1a;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+.k-btn:hover, .k-btn:active {
+    background-color: #f8f8f8;
+    text-decoration: none;
+}

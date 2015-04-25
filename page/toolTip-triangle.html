@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+    <style>
+        .example-gray{
+            border: 1px solid #ccc;
+        }
+        .example-red{
+            border: 1px solid #f4333c;
+        }
+        .example-blue{
+            border: 1px solid #00aaee;
+        }
+        .example-yellow{
+             border: 1px solid #ffc600;
+         }
+
+        .example-box {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            box-sizing: border-box;
+        }
+        .example-box2 {
+            display: inline-block;
+            position: relative;
+            padding: 0 10px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #fff;
+            box-sizing: border-box;
+        }
+        .example-bg-blue{
+            background: #00aaee;
+        }
+        .example-bg-red{
+            background: #f4333c;
+        }
+        .example-bg-yellow{
+            background: #ffc600;
+        }
+    </style>
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<script>
+    var Conf = {
+        title:'小三角',
+        subTitle:'<a href="../test/triangle.html" target="_blank">查看更多示例</a>',
+        headCols: [
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            },
+            {
+                text: '说明'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: '<div class="example-box example-gray tri" k-mode="down 10 bg-white bd-gray">',
+                    strip:false
+                },
+                {
+                    text: '<div class="example-box example-blue tri" k-mode="down 10 bg-white bd-gray">',
+                    strong:["tri", "down 10 bg-white bd-gray"]
+                },
+                {
+                    text: '',
+                    strip:false,
+                    strong:""
+                }
+            ],
+            [
+                {
+                    text: '<div class="example-box example-red tri" k-mode="down 15 right-10 bg-white bd-red">',
+                    strip:false
+                },
+                {
+                    text: '<div class="example-box example-red tri" k-mode="down 15 right-10 bg-white bd-red">',
+                    strong:["tri", "15 right-10"]
+                },
+                {
+                    text: '',
+                    strong:""
+                }
+            ],
+            [
+                {
+                    text: '<div class="example-box example-blue tri" k-mode="left 10 top-10 bg-white bd-blue"></div>',
+                    strip:false
+                },
+                {
+                    text: '<div class="example-box example-blue tri" k-mode="left top-10 bg-white bd-blue"></div>',
+                    strong:["tri", "top-10"]
+                },
+                {
+                    text: '',
+                    strong:""
+                }
+            ],
+            [
+                {
+                    text: '<div class="example-box example-yellow tri " k-mode="right 5 bottom-5 bg-white bd-yellow"></div>',
+                    strip:false
+                },
+                {
+                    text: '<div class="example-box example-yellow tri " k-mode="right 5 bottom-5 bg-white bd-yellow"></div>',
+                    strong:["tri", "right 5 bottom-5"]
+                },
+                {
+                    text: '',
+                    strong:""
+                }
+            ],
+            [
+                {
+                    text: '<div class="example-box2 example-bg-blue example-blue tri " k-mode="left 10 top-10 bg-blue bd-blue">向左箭头的提示信息</div>',
+                    strip:false
+                },
+                {
+                    text: '<div class="example-box2 example-bg-blue example-blue tri " k-mode="left 10 top-10 bg-blue bd-blue">向左箭头的提示信息</div>',
+                    strong:["tri", "left 10 top-10 bg-blue bd-blue"]
+                },
+                {
+                    text: '',
+                    strong:""
+                }
+            ],
+            [
+                {
+                    text: '<div class="example-box2 example-bg-red example-red tri " k-mode="right 10 top-10 bg-red bd-red">向右箭头的提示信息</div>',
+                    strip:false
+                },
+                {
+                    text: '<div class="example-box2 example-bg-red example-red tri " k-mode="right 10 top-10 bg-red bd-red">向右箭头的提示信息</div>',
+                    strong:["tri", "right 10 top-10 bg-red bd-red"]
+                },
+                {
+                    text: '',
+                    strong:""
+                }
+            ],
+            [
+                {
+                    text: '<div class="example-box2 example-bg-yellow example-yellow tri " k-mode="down left-10 10 bg-yellow bd-yellow">向下箭头的提示信息</div>',
+                    strip:false
+                },
+                {
+                    text: '<div class="example-box2 example-bg-yellow example-yellow tri " k-mode="down left-10 10 bg-yellow bd-yellow">向下箭头的提示信息</div>',
+                    strong:["tri", "down left-10 10 bg-yellow bd-yellow"]
+                },
+                {
+                    text: '',
+                    strong:""
+                }
+            ]
+        ],
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+</script>
+</body>
+</html>

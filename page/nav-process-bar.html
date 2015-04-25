@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<style>
+    .box {
+        position: relative;
+        height: 13px;
+        background: red;
+        margin-bottom: 5px;
+        font-size: 13px;
+        color: green;
+    }
+
+    .box:before {
+        content: attr(width) 'px';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -50px;
+        font-size: 12px;
+        line-height: 13px;
+    }
+</style>
+<script>
+    var Conf = {
+        title: '导航进度条',
+        headCols: [
+            {
+                text: '简介'
+            },
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: '导航条(支持IE8)'
+                },
+                {
+                    text: '<div class="k-nav-process-bar">' +
+                    '<div class="wp3 selected">' +
+                    '<i></i>填写商户信息' +
+                    '</div>' +
+                    '<div class="wp3">' +
+                    '<i></i>上传证件照片' +
+                    '</div>' +
+                    '<div class="wp3">' +
+                    '填写营业信息' +
+                    '</div>' +
+                    '</div>',
+                    style:{
+                      width:'500px'
+                    },
+                    strip: false
+                },
+                {
+                    text:function() {
+                        /*
+                         <div class="k-nav-process-bar"> 
+                             <div class="wp3 selected"> 
+                                <i></i>填写商户信息 
+                             </div> 
+                             <div class="wp3"> 
+                                <i></i>上传证件照片   
+                             </div> 
+                             <div class="wp3"> 
+                                填写营业信息 
+                             </div> 
+                         </div>
+                         */
+                    } ,
+                    code: true,
+                    strong: ['selected', 'k-nav-step-process-bar']
+                }
+            ],
+    [
+        {
+            text: '无限多个'
+        },
+        {
+            text: '<div class="k-nav-process-bar">' +
+            '<div class="wp4">' +
+            '<i></i>填写商户信息' +
+            '</div>' +
+            '<div class="wp4">' +
+            '<i></i>上传证件照片' +
+            '</div>' +
+            '<div class="wp4">' +
+            '<i></i>填写营业信息' +
+            '</div>' +
+            '<div class="wp4 selected">' +
+            '完成' +
+            '</div>' +
+            '</div>',
+            style:{
+                width:'500px'
+            },
+            strip: false
+        },
+        {
+            text: function(){
+              /*
+               <div class="k-nav-process-bar"> 
+                   <div class="wp4">
+                        <i></i>填写商户信息
+                   </div>
+                   <div class="wp4">
+                        <i></i>上传证件照片
+                   </div>
+                   <div class="wp4">
+                        <i></i>填写营业信息
+                   </div>
+                   <div class="wp4 selected">
+                        完成
+                   </div>
+               </div>
+                 */
+            },
+            code: true,
+            strong: ['selected', 'k-nav-step-process-bar']
+        }
+    ]
+        ],
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+</script>
+</body>
+</html>

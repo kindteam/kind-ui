@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<script>
+    var Conf = {
+        title:'字体大小规范',
+        headCols: [
+            {
+                text: '样式'
+            },
+            {
+                text: '显示效果(abc)'
+            },
+            {
+                text: '显示效果(中文)'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body:  (function(){
+            var classNamePrefix = 'ft-', className;
+            var results = [];
+
+            $.each([12, 14, 18, 24, 28], function(_, font) {
+                className = classNamePrefix + font;
+
+                results.push(
+                        [
+                            {
+                                text:className,
+                                className:'ft-bold'
+                            },
+                            {
+                                text:font + 'px',
+                                className:className
+                            },
+                            {
+                                text:'文字描述',
+                                className:className
+                            },
+                            {
+                                text:'<span class="'+className+'">'   + '</span>',
+                                strong:className
+                            }
+
+                        ]
+                );
+            });
+
+//            for(var i = 12; i <= 32; ) {
+//                className = classNamePrefix + i;
+//
+//                results.push(
+//                        [
+//                            {
+//                                text:className
+//                            },
+//                            {
+//                                text:'0123456789abcdefghijk',
+//                                className:className
+//                            },
+//                            {
+//                                text:'文字描述',
+//                                className:className
+//                            },
+//                            {
+//                                text:'<span class="'+className+'">'   + '</span>',
+//                                strong:className
+//                            }
+//
+//                        ]
+//                );
+//
+//                i += 2;
+//            }
+            return results;
+        })(),
+
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+
+</script>
+</body>
+</html>

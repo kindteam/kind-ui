@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <style>
+    </style>
+</head>
+<body>
+
+<div class="header">J UI Components</div>
+<div class="content">
+    <div class="nav ft-14">
+        <ul>
+            <div class="li-section-blue">
+                <li><a href="iconfont.html" target="view">iconfont</a></li>
+                <li often><a href="font-background-color.html" target="view">[文字/背景]颜色</a></li>
+                <li><a href="font-size.html" target="view">文字大小</a></li>
+                <li><a href="font-effect.html" target="view">文字效果</a></li>
+                <li><a href="box-edge.html" target="view">box边距</a></li>
+                <li><a href="width.html" target="view">width</a></li>
+                <li><a href="fn.html" target="view">常用功能</a></li>
+            </div>
+
+            <div class="li-section-green">
+                <li often><a href="button.html" target="view">按钮</a></li>
+                <li often><a href="form-input.html" target="view">表单-输入框</a></li>
+                <li><a href="form-select.html" target="view">表单-选择框</a></li>
+            </div>
+
+
+            <div class="li-section-orange">
+                <li><a href="toolTip-triangle.html" target="view">提示框-小三角</a></li>
+                <li><a href="page-arrow.html" target="view">分页-箭头</a></li>
+                <li><a href="nav-process-bar.html" target="view">导航条</a></li>
+                <li><a href="vprocess-bar.html" target="view">垂直步骤条</a></li>
+                <li><a href="helpdoc.html" target="view">doc_test</a></li>
+            </div>
+
+
+            <!--<div class="dash">-->
+            <!--<li><a href="../test/reset.html" target="view">浏览器默认reset</a></li>-->
+            <!--<li><a href="../test/em_percent_diff.html" target="view">百分比/em</a></li>-->
+            <!--<li><a href="../test/css_priority.html" target="view">css选择器优先级</a></li>-->
+            <!--<li><a href="../test/font_family.html" target="view">font-family</a></li>-->
+            <!--<li><a href="../test/center.html" target="view">居中对齐</a></li>-->
+            <!--<li><a href="../test/border.html" target="view">border</a></li>-->
+            <!--<li><a href="../test/table.html" target="view">table</a></li>-->
+            <!--</div>-->
+        </ul>
+
+    </div>
+
+    <div class="view">
+        <iframe id="iframe" name="view" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script>
+
+    var $iframe = $('#iframe'), $view = $('.view'), pageName;
+
+    if (location.hash) {
+        pageName = location.hash.slice(1);
+        $iframe.attr('src', pageName + '.html');
+        $('[href^="' + pageName + '"]').parent().addClass('selected')
+    }
+    else {
+        $iframe.attr('src', 'rule.html');
+    }
+
+
+    $iframe.load(function (e) {
+        var iframeHref = $iframe[0].contentWindow.location;
+        var pageName = /\/([^/]+)\.(?:[^.])+$/g.exec(iframeHref)[1];
+
+        location.hash = pageName;
+
+        $view.height($iframe[0].contentWindow.document.body.clientHeight);
+    });
+
+
+    $('.nav').on('click', 'li', function (e) {
+        $(this).addClass('selected').siblings().removeClass('selected').parent().siblings().find('li').removeClass('selected');
+    });
+</script>
+</body>
+</html>

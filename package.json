@@ -1,0 +1,28 @@
+{
+  "family": "kind",
+  "name": "kindui",
+  "version": "1.0.0",
+  "description": "The best project ever.",
+  "homepage": "",
+  "author": "human.hjh",
+  "maintainers": [
+    "human.hjh"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://gitlab.alibaba-inc.com/kind/kindui.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "keywords": [],
+  "licenses": "MIT",
+  "spm": {
+    "output": [
+      "kindui.css"
+    ],
+    "alias": {},
+    "devAlias": {},
+    "engines": {}
+  }
+}

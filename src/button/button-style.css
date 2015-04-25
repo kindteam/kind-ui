@@ -1,0 +1,46 @@
+
+
+.k-btn-group > .k-btn {
+    margin-left: 10px;
+}
+
+/*IE8只支持 :first-child*/
+.k-btn-group > .k-btn:first-child {
+    margin-left: 0;
+}
+
+.k-btn-assist {
+    color: #00bbee;
+    border-color: #00bbee;
+}
+.k-btn-assist:hover, .k-btn-assist:active {
+    background: #fff;
+}
+
+
+.k-btn-dash {
+    border: 1px dashed #ccc;
+
+    color: #0be;
+}
+
+.k-btn-dash:hover, .k-btn-dash:active {
+    border: 1px dashed #0be;
+    background: #fff;
+
+}
+.k-btn-search:before {
+    font-family:"kindfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.k-btn-search{
+
+}
+.k-btn-search:before{
+    content:'\e60a';
+    margin-right: 5px;
+}

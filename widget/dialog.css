@@ -1,0 +1,52 @@
+
+.kind-dialog {
+    position: absolute;
+    left: 300px;
+    width: 500px;
+    height: 200px;
+    border: 1px solid #ccc;
+    font-family: tahoma, arial, '\5FAE\8F6F\96C5\9ED1', '\5B8B\4F53';
+    -webkit-font-smoothing: antialiased;
+    -moz-box-shadow: 8px 8px 25px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 8px 8px 25px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 8px 8px 25px 1px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    z-index: 999;
+}
+
+.kind-dialog-container {
+
+}
+
+.kind-dialog-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 10;
+    font-size: 32px;
+    text-decoration: none;
+    color: #a6a6a6;
+    cursor: pointer;
+    text-align: center;
+    width: 40px;
+    height: 50px;
+    line-height: 50px;
+}
+.kind-dialog-close:hover{
+
+}
+
+.kind-dialog-title {
+    height: 50px;
+    padding-left: 20px;
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 50px;
+    color: #444;
+
+}
+
+.kind-dialog-content {
+    padding: 20px;
+}

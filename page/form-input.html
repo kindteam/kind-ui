@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<script>
+    var Conf = {
+        title: '表单输入框',
+        headCols: [
+            {
+                text: '说明'
+            },
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: '普通表单',
+                    style:{
+                        'min-width':'50px'
+                    }
+                },
+                {
+                    text:  '<div class="k-form-item">' +
+                            '<label class="k-form-title">普通表单</label>' +
+                            '<input class="k-input" type="input" value="输入信息">' +
+                            '<div class="k-form-tip">提示消息</div>' +
+                            '</div>',
+                    style:{
+                      'min-width':'530px'
+                    },
+                    strip: false
+                },
+                {
+                    text: function() {
+                        /*
+                        <div class="k-form-item">
+                            <label class="k-form-title">普通表单</label>
+                            <input class="k-input" type="input" value="输入信息">
+                            <div class="k-form-tip">提示消息</div>
+                        </div>
+                         */
+                    },
+                    
+                    code: true,
+                    strong: ['k-form-item', 'k-form-title', 'k-input', 'k-form-tip']
+                }
+
+            ],
+            [
+                {
+                    text: '右边连接'
+                },
+                {
+                    text: '<div class="k-form-item">' +
+                    '<label class="k-form-title">支付密码</label>' +
+                    '<input class="k-input" type="input">' +
+                    '<div class="k-input-right-text"><a>忘记密码</a></div>'+
+                    '<div class="k-form-tip">提示消息</div>' +
+                    '</div>',
+                    strip: false
+                },
+                {
+                    text:function() {
+                        /*
+                         <div class="k-form-item"> 
+                             <label class="k-form-title">支付密码</label>
+                             <input class="k-input" type="input">
+                             <div class="k-input-right-text"><a>忘记密码</a></div>
+                             <div class="k-form-tip">提示消息</div>
+                         </div>
+                         */
+                    } ,
+                    
+                    code: true,
+                    strong: ['k-input-right-text']
+                }
+
+            ],
+            [
+                {
+                    text: '弱提示'
+                },
+                {
+                    text: '<div class="k-form-item">'+
+                    '<label class="k-form-title">用户名</label>'+
+                    '<input class="k-input" type="input" placeholder="弱提示 placeholder">'+
+                    '<div class="k-form-tip">提示消息</div>'+
+                    '</div>',
+                    strip: false
+                },
+                {
+                    text: function() {
+                      /*
+                       <div class="k-form-item">
+                           <label class="k-form-title">用户名</label>
+                           <input class="k-input" type="input" placeholder="弱提示 placeholder">
+                           <div class="k-form-tip">提示消息</div>
+                       </div>
+                         */
+                    },
+                    code: true,
+                    strong: ['placeholder']
+                }
+
+            ],
+            [
+                {
+                    text: '错误表单'
+                },
+                {
+                    text: '<div class="k-form-item k-form-item-error">'+
+                    '<label class="k-form-title">错误表单</label>'+
+            '<input class="k-input" type="input" value="错误内容">'+
+                    '<div class="k-form-tip">错误消息</div>'+
+                    '</div>',
+                    strip: false
+                },
+                {
+                    text:function() {
+                        /*
+                         <div class="k-form-item k-form-item-error">
+                             <label class="k-form-title">错误表单</label>
+                             <input class="k-input" type="input" value="错误内容">
+                             <div class="k-form-tip">错误消息</div>
+                         </div>
+                         */
+                    } ,
+                    
+                    code: true,
+                    strong: ['k-form-item-error']
+                }
+            ],
+            [
+                {
+                    text: '禁止输入'
+                },
+                {
+                    text: '<div class="k-form-item">'+
+                    '<label class="k-form-title">禁止输入</label>'+
+            '<input type="input" class="k-input" value="禁止输入" disabled>'+
+                    '<div class="k-form-tip">提示消息</div>'+
+                    '</div>',
+                    strip: false
+                },
+                {
+                    text:function() {
+                        /*
+                         <div class="k-form-item">
+                             <label class="k-form-title">禁止输入</label>
+                             <input type="input" class="k-input" value="禁止输入" disabled>
+                             <div class="k-form-tip">提示消息</div>
+                         </div>
+                         */
+                    } ,
+                    
+                    code: true,
+                    strong: ['disabled']
+                }
+            ],
+            [
+                {
+                    text: '必填项'
+                },
+                {
+                    text: '<div class="k-form-item">'+
+    '<label class="k-form-title k-form-title-require">必填项</label>'+
+    '<input class="k-input" type="input">'+
+    '<div class="k-form-tip">提示消息</div>'+
+    '</div>',
+                    strip: false
+                },
+                {
+                    text: function() {
+                        /*
+                         <div class="k-form-item">
+                             <label class="k-form-title k-form-title-require">必填项</label>
+                             <input class="k-input" type="input">
+                             <div class="k-form-tip">提示消息</div>
+                         </div>,
+                         */
+                    },
+                    code: true,
+                    strong: ['k-form-title-require']
+                }
+            ],
+            [
+                {
+                    text: '垂直表单'
+                },
+                {
+                    text: '<div class="k-form-item k-form-vertical">'+
+    '<label class="k-form-title">垂直表单标题</label>'+
+    '<input class="k-input" type="input" value="输入信息">'+
+    '<div class="k-form-tip">提示消息</div>'+
+    '</div>',
+                    strip: false
+                },
+                {
+                    text: function() {
+                        /*
+                         <div class="k-form-item k-form-vertical">
+                             <label class="k-form-title">垂直表单标题</label>
+                             <input class="k-input" type="input" value="输入信息">
+                             <div class="k-form-tip">提示消息</div>
+                         </div>,
+                         */
+                    },
+                    code: true,
+                    strong: ['k-form-vertical']
+                }
+            ],
+            [
+                {
+                    text: '垂直表单副标题'
+                },
+                {
+                    text: '<div class="k-form-item k-form-vertical">'+
+                    '<label class="k-form-title">垂直表单标题<label class="k-form-title-desc">补充说明信息</label></label>'+
+                    '<input class="k-input" type="input" value="输入信息">'+
+                    '<div class="k-form-tip">提示消息</div>'+
+                    '</div>',
+                    strip: false
+                },
+                {
+                    text: function() {
+                        /*
+                         <div class="k-form-item k-form-vertical">
+                             <label class="k-form-title">垂直表单标题<label class="k-form-title-desc">补充说明信息</label></label>
+                             <input class="k-input" type="input" value="输入信息">
+                             <div class="k-form-tip">提示消息</div>
+                         </div>,
+                         */
+                    },
+                    code: true,
+                    strong: ['k-form-title-desc', 'k-form-vertical']
+                }
+            ]
+
+        ],
+
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+</script>
+</body>
+</html>

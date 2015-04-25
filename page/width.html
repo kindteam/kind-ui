@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<style>
+    .box, .box2 {
+        position: relative;
+        height: 13px;
+        background: red;
+        margin-bottom: 5px;
+        font-size: 13px;
+        color: green;
+    }
+
+    .box2 {
+        background: transparent;
+        height: 20px;
+    }
+
+    .smbox {
+        display: inline;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        line-height: 20px;
+        border: 1px dashed green;
+        box-sizing: border-box;
+        padding-left: 5px;
+    }
+
+    .box:before {
+        content: attr(width) 'px';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -50px;
+        font-size: 12px;
+        line-height: 13px;
+    }
+</style>
+<script>
+    var Conf = {
+        title: 'width',
+        headCols: [
+            {
+                text: '简介'
+            },
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: '宽度自定义px:范围w5~w100',
+                    className: 'ft-bold'
+                },
+                {
+                    text: (function () {
+
+                        var result = [];
+                        for (var i = 5; i <= 100;) {
+                            result.push('<div class="box w' + i + '" width="' + i + '"></div>\n');
+                            i += 5;
+                        }
+                        return result.join('');
+                    })(),
+                    strip: false
+                },
+                {
+                    text: (function () {
+
+                        var result = [];
+                        for (var i = 5; i <= 100;) {
+                            result.push('<div class="box w' + i + '"></div>\n');
+                            i += 5;
+                        }
+                        return result.join('');
+                    })(),
+                    code: true,
+                    strong: [['(w\\d+)', '$1']]
+                }
+            ],
+            [
+                {
+                    text: '宽度自定义百分比,wp1,wp2,wp3,wp4,wp5,wp6',
+                    className: 'ft-bold'
+                },
+                {
+                    text:  '<div class="box2 fn-clear">'+
+                    '<div class="smbox wp1">wp1</div>'+
+                    '</div>'+
+
+                    '<div class="box2 fn-clear">'+
+                    '<div class="smbox wp2">wp2</div>'+
+                    '<div class="smbox wp2">wp2</div>'+
+                    '</div>'+
+
+                    '<div class="box2 fn-clear">'+
+                    '<div class="smbox wp3">wp3</div>'+
+                    '<div class="smbox wp3">wp3</div>'+
+                    '<div class="smbox wp3">wp3</div>'+
+                    '</div>'+
+
+                    '<div class="box2 fn-clear">'+
+                    '<div class="smbox wp4">wp4</div>'+
+                    '<div class="smbox wp4">wp4</div>'+
+                    '<div class="smbox wp4">wp4</div>'+
+                    '<div class="smbox wp4">wp4</div>'+
+                    '</div>'+
+
+                    '<div class="box2 fn-clear">'+
+                    '<div class="smbox wp5">wp5</div>'+
+                    '<div class="smbox wp5">wp5</div>'+
+                    '<div class="smbox wp5">wp5</div>'+
+                    '<div class="smbox wp5">wp5</div>'+
+                    '<div class="smbox wp5">wp5</div>'+
+                    '</div>'+
+
+                    '<div class="box2 fn-clear">'+
+                    '<div class="smbox wp6">wp6</div>'+
+                    '<div class="smbox wp6">wp6</div>'+
+                    '<div class="smbox wp6">wp6</div>'+
+                    '<div class="smbox wp6">wp6</div>'+
+                    '<div class="smbox wp6">wp6</div>'+
+                    '<div class="smbox wp6">wp6</div>'+
+                    '</div>',
+                    strip: false
+                },
+                {
+                    text: function() {
+                        /*
+                         <div class="box2 fn-clear">
+                            <div class="smbox wp1">wp1</div>
+                         </div>
+
+                         <div class="box2 fn-clear">
+                             <div class="smbox wp2">wp2</div>
+                             <div class="smbox wp2">wp2</div>
+                         </div>
+
+                         <div class="box2 fn-clear">
+                             <div class="smbox wp3">wp3</div>
+                             <div class="smbox wp3">wp3</div>
+                             <div class="smbox wp3">wp3</div>
+                         </div>
+
+                         <div class="box2 fn-clear">
+                             <div class="smbox wp4">wp4</div>
+                             <div class="smbox wp4">wp4</div>
+                             <div class="smbox wp4">wp4</div>
+                             <div class="smbox wp4">wp4</div>
+                         </div>
+
+                         <div class="box2 fn-clear">
+                             <div class="smbox wp5">wp5</div>
+                             <div class="smbox wp5">wp5</div>
+                             <div class="smbox wp5">wp5</div>
+                             <div class="smbox wp5">wp5</div>
+                             <div class="smbox wp5">wp5</div>
+                         </div>
+
+                         <div class="box2 fn-clear">
+                             <div class="smbox wp6">wp6</div>
+                             <div class="smbox wp6">wp6</div>
+                             <div class="smbox wp6">wp6</div>
+                             <div class="smbox wp6">wp6</div>
+                             <div class="smbox wp6">wp6</div>
+                             <div class="smbox wp6">wp6</div>
+                         </div>
+                         */
+                    },
+
+                    code: true,
+                    strong: [['(wp\\d+)', '$1']]
+                }
+            ]
+        ],
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+</script>
+</body>
+</html>

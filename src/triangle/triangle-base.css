@@ -1,0 +1,111 @@
+.tri {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.tri:before,
+.tri:after {
+    position: absolute;
+    content: '';
+}
+
+
+.tri[k-mode~='left-5']:before,
+.tri[k-mode~='left-5']:after {
+    left: 5px;
+    right: auto;
+}
+
+.tri[k-mode~='left-10']:before,
+.tri[k-mode~='left-10']:after {
+    left: 10px;
+    right: auto;
+}
+
+.tri[k-mode~='left-15']:before,
+.tri[k-mode~='left-15']:after {
+    left: 15px;
+    right: auto;
+}
+
+.tri[k-mode~='left-20']:before,
+.tri[k-mode~='left-20']:after {
+    left: 20px;
+    right: auto;
+}
+
+.tri[k-mode~='right-5']:before,
+.tri[k-mode~='right-5']:after {
+    right: 5px;
+    left: auto;
+}
+
+.tri[k-mode~='right-10']:before,
+.tri[k-mode~='right-10']:after {
+    right: 10px;
+    left: auto;
+}
+
+.tri[k-mode~='right-15']:before,
+.tri[k-mode~='right-15']:after {
+    right: 15px;
+    left: auto;
+}
+
+.tri[k-mode~='right-20']:before,
+.tri[k-mode~='right-20']:after {
+    right: 20px;
+    left: auto;
+}
+
+
+.tri[k-mode~='top-5']:before,
+.tri[k-mode~='top-5']:after {
+    top: 5px;
+    bottom: auto;
+}
+
+.tri[k-mode~='top-10']:before,
+.tri[k-mode~='top-10']:after {
+    top: 10px;
+    bottom: auto;
+}
+
+.tri[k-mode~='top-15']:before,
+.tri[k-mode~='top-15']:after {
+    top: 15px;
+    bottom: auto;
+}
+
+.tri[k-mode~='top-20']:before,
+.tri[k-mode~='top-20']:after {
+    top: 20px;
+    bottom: auto;
+}
+
+.tri[k-mode~='bottom-5']:before,
+.tri[k-mode~='bottom-5']:after {
+    top: auto;
+    bottom: 5px;
+}
+
+.tri[k-mode~='bottom-10']:before,
+.tri[k-mode~='bottom-10']:after {
+    top: auto;
+    bottom: 10px;
+}
+
+.tri[k-mode~='bottom-15']:before,
+.tri[k-mode~='bottom-15']:after {
+    top: auto;
+    bottom: 15px;
+}
+
+.tri[k-mode~='bottom-20']:before,
+.tri[k-mode~='bottom-20']:after {
+    top: auto;
+    bottom: 20px;
+}

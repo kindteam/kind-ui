@@ -1,0 +1,60 @@
+.fn-f12{
+    font-size: 12px;
+}
+.fonts p{
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.fonts p span{
+    border: 1px solid green;
+    padding: 5px;
+    margin-left: 5px;
+}
+.fonts p:after{
+    content: attr(data-fontFamily);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 150px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    color: #fff;
+    background: red;
+    padding-left: 5px;
+}
+.guifan{
+    /*知乎用的*/
+    /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    font-family: tahoma, arial, 'Microsoft YaHei','\5FAE\8F6F\96C5\9ED1','STXihei','SimHei';
+}
+.sans-serif{
+    font-family:  sans-serif;
+}
+.tahoma{
+    font-family:  tahoma;
+}
+.arial{
+    font-family:  arial;
+}
+.yahei {
+    font-family:  '\5FAE\8F6F\96C5\9ED1';
+}
+.songti {
+    font-family: '\5B8B\4F53';
+}
+.Helvetica{
+    font-family: 'Helvetica';
+}
+.Hiragino{
+    font-family: 'Hiragino Sans GB';
+}
+.withsmoothing{
+    -webkit-font-smoothing: antialiased;
+}
+
+.MicrosoftYaHei {
+    font-family: 'Microsoft YaHei';
+}

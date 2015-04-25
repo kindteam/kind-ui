@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<script>
+    var Conf = {
+        title: '垂直步骤条',
+        headCols: [
+            {
+                text: '效果'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body: [
+            [
+                {
+                    text:  '<div class="vprocess-bar">' +
+                    '<div class="vprocess-bar-item success active">' +
+                    '<div class="vprocess-bar-title">提交成功</div>' +
+                    '<div class="vprocess-bar-text">2015-4-20</div>' +
+                    '</div>' +
+                    '<div class="vprocess-bar-item wait">' +
+                    '<div class="vprocess-bar-title">等待信息</div>' +
+                    '<div class="vprocess-bar-text">提示用户</div>' +
+                    '</div>' +
+                    '<div class="vprocess-bar-item wait ">' +
+                    '<div class="vprocess-bar-title">完成</div>' +
+                    '</div>' +
+                    '</div>',
+                    strip: false
+                },
+                {
+                    text: function() {
+                       /*
+                        <div class="vprocess-bar"> 
+                            <div class="vprocess-bar-item success active"> 
+                                <div class="vprocess-bar-title">提交成功</div> 
+                                <div class="vprocess-bar-text">2015-4-20</div> 
+                            </div> 
+                            <div class="vprocess-bar-item wait"> 
+                                <div class="vprocess-bar-title">等待信息</div> 
+                                <div class="vprocess-bar-text">提示用户</div> 
+                            </div> 
+                                <div class="vprocess-bar-item wait "> 
+                                <div class="vprocess-bar-title">完成</div> 
+                            </div> 
+                        </div>
+                         */
+                    } ,
+                    
+                    code: true,
+                    strong:[ 'vprocess-bar-item', 'vprocess-bar-title','vprocess-bar-text','vprocess-bar']
+                }
+            ],
+            [
+                {
+                    text: '<div class="vprocess-bar">' +
+                    '<div class="vprocess-bar-item ">' +
+                    '<i>1</i>'+
+                    '<div class="vprocess-bar-title">提交成功</div>' +
+                    '<div class="vprocess-bar-text">2015-4-20</div>' +
+                    '</div>' +
+                    '<div class="vprocess-bar-item active">' +
+                    '<i>2</i>'+
+                    '<div class="vprocess-bar-title">等待信息</div>' +
+                    '<div class="vprocess-bar-text">提示提示用户提示用户提示用提示提示用户提示用户提示用户提示用户提示用户用户提示提示用户提示用</div>' +
+                    '</div>' +
+                    '<div class="vprocess-bar-item">' +
+                    '<i>3</i>'+
+                    '<div class="vprocess-bar-title">完成</div>' +
+                    '</div>' +
+                    '</div>',
+                    strip: false
+                },
+                {
+                    text: function() {
+                      /*
+                       <div class="vprocess-bar"> 
+                           <div class="vprocess-bar-item "> 
+                            <i>1</i>
+                           <div class="vprocess-bar-title">提交成功</div> 
+                           <div class="vprocess-bar-text">2015-4-20</div> 
+                           </div> 
+                           <div class="vprocess-bar-item active"> 
+                            <i>2</i>
+                           <div class="vprocess-bar-title">等待信息</div> 
+                           <div class="vprocess-bar-text">提示提示用户提示用户提示用提示提示用户提示用户提示用户提示用户提示用户用户提示提示用户提示用</div> 
+                           </div> 
+                           <div class="vprocess-bar-item"> 
+                            <i>3</i>
+                           <div class="vprocess-bar-title">完成</div> 
+                           </div> 
+                       </div>
+                         */
+                    },
+                    code: true,
+                    strong:['active']
+                }
+            ],
+            [
+                {
+                    text: '<div class="vprocess-bar">' +
+                    '<div class="vprocess-bar-item wait">' +
+                    '<div class="vprocess-bar-title">第一步</div>' +
+                    '<div class="vprocess-bar-text">2015-4-20</div>' +
+                    '</div>' +
+                    '<div class="vprocess-bar-item tip">' +
+                    '<div class="vprocess-bar-title">提交成功</div>' +
+                    '<div class="vprocess-bar-text">2015-4-20</div>' +
+                    '</div>' +
+                    '<div class="vprocess-bar-item warn">' +
+                    '<div class="vprocess-bar-title">等待信息</div>' +
+                    '<div class="vprocess-bar-text">提示用户</div>' +
+                    '</div>' +
+                    '<div class="vprocess-bar-item error active-red">' +
+                    '<div class="vprocess-bar-title">完成</div>' +
+                    '</div>' +
+                    '</div>',
+                    strip: false
+                },
+                {
+                    text:function() {
+                      /*
+                       <div class="vprocess-bar"> 
+                           <div class="vprocess-bar-item wait">
+                               <div class="vprocess-bar-title">第一步</div>
+                               <div class="vprocess-bar-text">2015-4-20</div>
+                           </div>
+                           <div class="vprocess-bar-item tip">
+                               <div class="vprocess-bar-title">提交成功</div>
+                               <div class="vprocess-bar-text">2015-4-20</div>
+                           </div>
+                           <div class="vprocess-bar-item warn">
+                               <div class="vprocess-bar-title">等待信息</div>
+                               <div class="vprocess-bar-text">提示用户</div>
+                           </div>
+                           <div class="vprocess-bar-item error active-red">
+                               <div class="vprocess-bar-title">完成</div>
+                           </div>
+                       </div>
+                         */
+                    },
+                    code: true,
+                    strong:['wait', 'tip', 'warn' ,'error','active-red']
+                }
+            ]
+        ],
+
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+</script>
+</body>
+</html>

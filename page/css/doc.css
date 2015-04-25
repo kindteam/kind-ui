@@ -1,0 +1,35 @@
+table{
+    border: 1px solid #e7e7eb;
+    width: 100%;
+}
+
+thead tr {
+}
+tr {
+    background-color: #fff;
+    border-bottom: 1px solid #e7e7eb;
+}
+
+th {
+    background-color: #f4f5f9;
+    font-weight: 700;
+}
+td {
+    border-left: 1px solid #e7e7eb;
+    border-right: 1px solid #e7e7eb;
+}
+
+
+th,td {
+    padding: 13px 1em;
+    font-size: 12px;
+    text-align: left;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-left: 1px solid #e7e7eb;
+    border-right: 1px solid #e7e7eb;
+}
+.table-title{
+    font-size: 20px;
+    margin: 20px 0 10px 0;
+}

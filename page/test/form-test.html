@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../../src/kindui.css">
+    <style>
+        .section {
+            margin: 20px;
+            width: 560px;
+            border: 1px dashed #ccc;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="section">
+    <div class="k-form-item">
+        <label class="k-form-title">普通表单</label>
+        <input class="k-input" type="input" value="输入信息">
+        <div class="k-form-tip">提示消息</div>
+    </div>
+
+    <div class="k-form-item">
+        <label class="k-form-title">支付密码</label>
+        <input class="k-input" type="input" >
+        <div class="k-input-right-text"><a>忘记密码</a></div>
+        <div class="k-form-tip">提示消息</div>
+    </div>
+
+    <div class="k-form-item">
+        <label class="k-form-title">用户名</label>
+        <input class="k-input" type="input" placeholder="弱提示 placeholder">
+        <div class="k-form-tip">提示消息</div>
+    </div>
+
+    <div class="k-form-item k-form-item-error">
+        <label class="k-form-title">错误表单</label>
+        <input class="k-input" type="input" value="错误内容">
+        <div class="k-form-tip">错误消息</div>
+    </div>
+
+    <div class="k-form-item">
+        <label class="k-form-title">禁止输入</label>
+        <input type="input" class="k-input" value="禁止输入" disabled>
+        <div class="k-form-tip">提示消息</div>
+    </div>
+
+    <div class="k-form-item">
+        <label class="k-form-title k-form-title-require">必填项</label>
+        <input class="k-input" type="input">
+        <div class="k-form-tip">提示消息</div>
+    </div>
+
+    <div style="height: 50px"></div>
+
+    <div class="k-form-item k-form-vertical">
+        <label class="k-form-title">垂直表单标题</label>
+        <input class="k-input" type="input" value="输入信息">
+
+        <div class="k-form-tip">提示消息</div>
+    </div>
+
+    <div class="k-form-item k-form-vertical">
+        <label class="k-form-title">垂直表单标题<label class="k-form-title-desc">补充说明信息</label></label>
+        <input class="k-input" type="input" value="输入信息">
+
+        <div class="k-form-tip"></div>
+    </div>
+
+    <div class="k-form-item">
+        <label class="k-form-title">长得帅吗</label>
+        <div class="k-radio-group">
+            <label><input type="radio" name="sex" value="0" checked>是</label>
+            <label><input type="radio" name="sex" value="1" checked>否</label>
+        </div>
+    </div>
+    <div class="k-form-item">
+        <label class="k-form-title">工作性质</label>
+        <div class="k-radio-group">
+            <label><input type="radio" name="sex" value="0" checked>政府机关</label>
+            <label><input type="radio" name="sex" value="1" checked>企业单位</label>
+        </div>
+    </div>
+
+    <button class="k-btn"></button>
+
+</div>
+<script type="text/javascript" src="../js/jquery-1.7.2.js"></script>
+
+
+</body>
+</html>

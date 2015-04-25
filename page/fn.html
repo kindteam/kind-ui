@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+<style>
+    .sample-box {
+        width: 100%;
+        height: 100%;
+    }
+
+    .sample-box span {
+        border: 1px dashed red;
+    }
+</style>
+<script>
+    var Conf = {
+        title:'工具类',
+        headCols: [
+            {
+                text: '样式'
+            },
+            {
+                text: '描述'
+            },
+            {
+                text: '显示效果'
+            },
+
+            {
+                text: 'code'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: 'fn-left',
+                    className:'ft-bold'
+                },
+                {
+                    text: '文字左浮动'
+                },
+                {
+                    text: '<div class="sample-box"><span class="fn-left">左浮动</span></div>',
+                    strip: false,
+                    style: {
+                        height: '50px'
+                    }
+                },
+                {
+                    text: '<span class="fn-left">左浮动</span>',
+                    strong: 'fn-left'
+                }
+            ],
+            [
+                {
+                    text: 'fn-right',
+                    className:'ft-bold'
+                },
+                {
+                    text: '文字右浮动'
+                },
+                {
+                    text: '<div class="sample-box"><span class="fn-right">右浮动</span></div>',
+                    strip: false,
+                    style: {
+                        height: '50px'
+                    }
+                },
+                {
+                    text: '<span class="fn-right">右浮动</span>',
+                    strong: 'fn-right'
+                }
+            ],
+            [
+                {
+                    text: 'fn-clear',
+                    className:'ft-bold'
+                },
+                {
+                    text: '清除浮动'
+                },
+                {
+                    text: '<div class="sample-box"><div class="fn-clear"><span class="fn-left">左浮动</span><span class="fn-right">右浮动</span></div><p>这行已经清除浮动了</p></div>',
+                    strip: false,
+                    style: {
+                        height: '50px'
+                    }
+                },
+                {
+                    text:function() {
+                      /*
+                       <div class="sample-box"> 
+                           <div class="fn-clear">
+                               <span class="fn-left">左浮动</span>
+                               <span class="fn-right">右浮动</span>
+                               :after
+                           </div>
+                           <p>这行已经清除浮动了</p>
+                       </div>,
+                          */
+                    },
+
+                    
+                    code:true,
+                    strong: ['fn-clear',':after']
+                }
+            ],
+            [
+                {
+                    text: 'fn-hide',
+                    className:'ft-bold'
+                },
+                {
+                    text: '隐藏'
+                },
+                {
+                    text: '<div class="fn-hide">隐藏了吗</div>',
+                    strip: false
+                },
+                {
+                    text: '<div class="fn-hide">隐藏了吗</div>',
+                    strong: 'fn-hide'
+                }
+            ]
+        ],
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+</script>
+</body>
+</html>

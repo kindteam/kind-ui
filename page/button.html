@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<script>
+    var Conf = {
+        title:'按钮',
+        headCols: [
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            },
+            {
+                text:'描述'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: '<button class="k-btn">取消</button>',
+                    strip:false
+                },
+                {
+                    text: '<button class="k-btn">取消</button>',
+                    strong:"k-btn"
+                },
+                {
+                    text:'默认按钮'
+                }
+            ],
+            [
+                {
+                    text: '<button class="k-btn k-btn-blue">确定</button>',
+                    strip:false
+                },
+                {
+                    text: '<button class="k-btn k-btn-blue">确定</button>',
+                    strong:"k-btn k-btn-blue"
+                },
+                {
+                    text:'蓝色'
+                }
+            ],
+            [
+                {
+                    text: '<button class="k-btn k-btn-assist">辅助按钮</button>',
+                    strip:false
+                },
+                {
+                    text: '<button class="k-btn k-btn-assist">辅助按钮</button>',
+                    strong:"k-btn-assist"
+                },
+                {
+                    text:'辅助按钮'
+                }
+            ],
+            [
+                {
+                    text: '<button class="k-btn k-btn-dash">虚线按钮</button>',
+                    strip:false
+                },
+                {
+                    text: '<button class="k-btn k-btn-dash">虚线按钮</button>',
+                    strong:"k-btn-dash"
+                },
+                {
+                    text:'虚线按钮'
+                }
+            ],
+            [
+                {
+                    text: '<button class="k-btn k-btn-dash">+ 虚线按钮</button>',
+                    strip:false
+                },
+                {
+                    text: '<button class="k-btn k-btn-dash">+虚线按钮</button>',
+                    strong:"k-btn-dash"
+                },
+                {
+                    text:'虚线按钮+'
+                }
+            ],
+            [
+                {
+                    text: '<div class="k-btn-group"><button class="k-btn k-btn-blue">保存</button><button class="k-btn">取消</button></div>',
+                    strip:false,
+                    style:{
+                        width:'200px'
+                    }
+                },
+                {
+                    text: function() {
+                      /*
+                       <div class="k-btn-group">
+                           <button class="k-btn k-btn-blue">保存</button>
+                           <button class="k-btn">取消</button>
+                       </div>
+                         */
+                    },
+                    code:true,
+                    strong:"k-btn-group"
+                },
+                {
+                    text:'按钮组'
+                }
+            ],
+            [
+                {
+                    text: '<button class="k-btn k-btn-search">搜索</button>',
+                    strip:false
+                },
+                {
+                    text: '<button class="k-btn k-btn-search">搜索</button>',
+                    strong:"k-btn-search"
+                },
+                {
+                    text:'搜索'
+                }
+            ]
+        ],
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+</script>
+</body>
+</html>

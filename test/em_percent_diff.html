@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/BoxModel.js"></script>
+    <script>
+
+        //这个可以自动识别页面的宽度来使用em
+        function setHTMLFontSize(){
+            var docEl = document.documentElement;
+            docEl.style.fontSize = 100 * docEl.clientWidth / 320 + 'px';
+        }
+//        setHTMLFontSize();
+//        !function() {
+//            var e;
+//            e = function() {
+//                !function(e) {
+//                    var t = e.devicePixelRatio,
+//                            i = e.document,
+//                            n = i.querySelector('meta[name="viewport"]'),
+//                            a = e.navigator.appVersion.match(/iphone/gi);
+//                    a || (t = 1);
+//                    var l = i.documentElement;
+//                    if (2 !== t || !n) {
+//                        var m = 1 / t;
+//                        if (n)
+//
+//                            n.setAttribute("content", "initial-scale=" + m + ",maximum-scale=" + m + ",minimum-scale=" + m + ",user-scalable=no");
+//
+//                        else if (n = i.createElement("meta"), n.setAttribute("name", "viewport"), n.setAttribute("content", "initial-scale=" + m + ", maximum-scale=" + m + ", minimum-scale=" + m + ", user-scalable=no"), l.firstElementChild)
+//
+//                            l.firstElementChild.appendChild(n);
+//
+//                        else {
+//                            var r = i.createElement("div");
+//                            r.appendChild(n), i.write(r.innerHTML)
+//                        }
+//                    }
+//                    if (e.baseWidth) {
+//                        var s = l.getBoundingClientRect().width, c = s / 10;
+//                        l.style.fontSize = c + "px"
+//                    } else
+//                        l.style.fontSize = 32 * t + "px"
+//                }(window)
+//            }()
+//        }();
+
+    </script>
+    <style>
+        /*html{*/
+        /*font-size: 20px;*/
+        /*}*/
+        /*body{*/
+        /*font-size: 20px;*/
+        /*}*/
+
+        .fn-red {
+            color: red;
+        }
+
+        .outer1 {
+            width: 200px;
+            height: 200px;
+            font-size: 18px;
+            border: 1px solid red;
+            padding: 20px;
+            margin: 30px;
+        }
+
+        .inner1 {
+            width: 50px;
+            height: 50px;
+            border: 1px solid green;
+            padding: 5px;
+            margin-top: 1em;
+            font-size: 14px;
+        }
+
+        .outer3{
+            position: relative;
+            font-size: 20px;
+        }
+        .outer2 {
+            position: relative;
+            width: 50px;
+            height: 100px;
+            font-size: 18px;
+            border: 1px solid red;
+            padding: 20px;
+            margin: 30px;
+        }
+
+        .inner2 {
+            width: 100%;
+            height: 100%;
+            border: 1px solid green;
+            padding-left: 100%;
+            padding-top: 100%;
+            margin-top: 100%;
+            margin-left: 100%;
+            font-size: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+<pre>
+    1、em是相对长度单位，相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。(引自CSS2.0手册)
+    2、如果当前元素没有font-size， em会继承父级元素的字体大小。
+</pre>
+
+<div class="outer1">
+    outer
+    <div class="inner1">
+        inner
+    </div>
+</div>
+
+
+<pre>
+    1、margin,padding,的%百分比，貌似是相对于父级元素的width来的。
+    2、width,height的%百分比，是相对于父级元素的width, height(这里没有加上padding)
+    3、top, left 的%百分比，是相对于父级元素的width, height(这里还要加上padding)
+    2、font-size:100% 的百分比是相对于父级来的。
+</pre>
+<div class="outer3">
+    <div class="outer2">
+        outer
+        <div class="inner2">
+            inner
+        </div>
+    </div>
+</div>
+
+<script>
+//    BoxModel('.inner2').showBox();
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+.k-input {
+    height: 32px;
+    width: 300px;
+    padding: 6px 10px 8px;
+    border: 1px solid #ccc;
+    outline: 0;
+    font-size: 14px;
+    color: #1a1a1a;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.k-input-right-text{
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 10px;
+
+}
+.k-input:focus, .k-input:hover {
+    border: 1px solid #0ae;
+}
+
+.k-input[disabled] {
+    background: #e6e7ec;
+    color: #8c8c8c;
+}
+
+.k-input[disabled]:hover {
+    border: 1px solid #ccc;
+}
+
+.k-form-item-error .k-input{
+    color: #f4333c;
+    border-color: #f4333c;
+}
+
+

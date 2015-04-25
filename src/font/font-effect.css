@@ -1,0 +1,15 @@
+.ft-ellipsis {
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+    word-wrap: normal;
+}
+.ft-nowrap{
+    white-space: nowrap;
+    overflow: hidden;
+}
+.ft-underline{
+    text-decoration: underline;
+}

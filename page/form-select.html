@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<script>
+    var Conf = {
+        title: '表单选择框',
+        headCols: [
+            {
+                text: '说明'
+            },
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: '单选按钮组'
+                },
+                {
+                    text: '<div class="k-form-item">'+
+                    '<label class="k-form-title">长得帅吗</label>'+
+                    '<div class="k-radio-group">'+
+                    '<label><input type="radio" name="sex" value="0" checked>是</label>'+
+                    '<label><input type="radio" name="sex" value="1" checked>否</label>'+
+                    '</div>'+
+                    '</div>',
+                    strip: false
+                },
+                {
+                    text: function() {
+                        /*
+                         <div class="k-form-item">
+                             <label class="k-form-title">长得帅吗</label>
+                             <div class="k-radio-group">
+                                 <label><input type="radio" name="sex" value="0" checked>是</label>
+                                 <label><input type="radio" name="sex" value="1" checked>否</label>
+                             </div>
+                         </div>
+                         */
+                    } ,
+                    code: true,
+                    strong: ['k-radio-group','<label>','</label>', 'radio']
+                }
+            ]
+        ],
+
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+</script>
+</body>
+</html>

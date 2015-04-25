@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script>
+
+    function createClass(Father) {
+
+        function F() {}
+        function Sub() {
+            if(this.superClass['_init']) {
+                this.superClass._init.apply(this, arguments);
+            }
+
+            if(this['_init']) {
+                this._init.apply(this, arguments);
+            }
+        }
+
+        F.prototype = Father.prototype;
+        Sub.prototype =  new F;
+        Sub.prototype.constructor = Sub;
+        Sub.prototype.superClass = Father.prototype;
+        return Sub;
+    }
+
+
+    function _InnerMethod(){}
+    _InnerMethod.prototype.i1 = function() {
+
+    };
+    var Panel = createClass(_InnerMethod);
+
+    _InnerMethod.prototype.i2 = function() {
+
+    };
+
+    Panel.prototype.a = function(){
+
+    };
+    Panel.prototype._init = function(){
+
+    };
+
+
+    var p = new Panel;
+    p.name='tom';
+</script>
+</body>
+</html>

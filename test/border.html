@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<style>
+    .fn-clear{
+        content: '';
+        clear: both;
+        display: block;
+    }
+    .box {
+        position: relative;
+        float: left;
+        width: 100px;
+        height: 100px;
+        border: 5px dashed green;
+        background: #e5e5e5;
+        margin: 10px;
+        padding: 10px;
+        font-size: 12px;
+        /* 默认 background-clip: border-box; */
+        color: red;
+    }
+    .sm-box {
+        width: 20px;
+        height: 20px;
+        border: 1px dashed red;
+        background: #e5e5e5;
+        font-size: 12px;
+        color: red;
+    }
+    .box p{
+        display: block;
+        white-space: nowrap;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    .absolute-child{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background: red;
+    }
+    .center-child{
+
+    }
+    .box1{
+        background-clip: padding-box;
+    }
+
+    .box2{
+        background-clip: content-box;
+    }
+</style>
+
+<div class="box">
+    默认：background-clip: border-box;
+</div>
+
+<div class="box box1">
+    background-clip: padding-box;
+</div>
+
+<div class="box box2">
+    background-clip: content-box;
+</div>
+
+<div class="box">
+    <div class="absolute-child"></div>
+    absolute定位是基于内边框定位，而不是外边框
+</div>
+
+<div class="box">
+    <p id="offsetWidth">offsetWidth:总的宽度(包括width+padding+border)</p>
+    <p id="clientWidth">clientWidth:不包括边框的width(width+padding)</p>
+    <p id="clientLeft">clientLeft:左边框</p>
+    <p id="offsetLeft">offsetLeft:离上一个定位元素最左边距离</p>
+</div>
+
+<div class="fn-clear"></div>
+
+<div class="box">
+    <div class=" sm-box center-child"></div>
+</div>
+
+</body>
+</html>

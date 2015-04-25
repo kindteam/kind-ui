@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<style>
+    .outer {
+        width: 50px;
+        height: 50px;
+        border: 1px dashed green;
+    }
+
+    .inner  {
+        width: 30px;
+        height: 30px;
+        border: 1px dashed red;
+        font-size: 12px;
+    }
+</style>
+<script>
+    var Conf = {
+        title:'内外边距',
+        headCols: [
+            {
+                text: '样式'
+            },
+            {
+                text: '显示效果'
+            },
+            {
+                text: '简介'
+            },
+            {
+                text: 'code'
+            }
+        ],
+        body: [
+            [
+                {
+                    text: '.mt5 .mb5 .ml5 .mr5',
+                    className:'ft-bold'
+                },
+                {
+                    text: '<div class="outer"><div class="inner mt5 mb5 ml5 mr5"></div></div>',
+                    strip: false
+                },
+                {
+                    text: '元素的上下左右margin外边距, 可取值mt[5|10|15|20|25|30]',
+                    strong:'mt[5|10|15|20|25|30]',
+                    strongReg:false
+                },
+                {
+                    text: '<div class="outer"><div class="inner mt5 mb5 ml5 mr5"></div></div>',
+                    strong: "mt5 mb5 ml5 mr5"
+                }
+            ],
+            [
+                {
+                    text: '.pt5 .pb5 .pl5 .pr5',
+                    className:'ft-bold'
+                },
+                {
+                    text: '<div class="outer pt10 pb10 pl10 pr10"><div class="inner"></div></div>',
+                    strip: false
+                },
+                {
+                    text: '元素的上下左右padding内边距, 可取值pt[5|10|15|20|25|30]',
+                    strong:['pt[5|10|15|20|25|30]'],
+                    strongReg:false
+                },
+                {
+                    text: '<div class="outer pt10 pb10 pl10 pr10"><div class="inner"></div></div>',
+                    strong: "pt10 pb10 pl10 pr10"
+                }
+            ],
+            [
+                {
+                    text: 'm0',
+                    className:'ft-bold'
+                },
+                {
+                    text: '<div class="outer"><div class="inner m0"></div></div>',
+                    strip: false
+                },
+                {
+                    text: 'margin:0'
+                },
+                {
+                    text: '<div class="m0"></div>',
+                    strong: "m0"
+                }
+            ],
+            [
+                {
+                    text: 'mauto',
+                    className:'ft-bold'
+                },
+                {
+                    text: '<div class="outer"><div class="inner mauto"></div></div>',
+                    strip: false
+                },
+                {
+                    text: '常用来设置左右居中,margin-left:auto; margin-right:auto;'
+                },
+                {
+                    text: '<div class="mauto"></div>',
+                    strong: "mauto"
+                }
+            ]
+        ],
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+</script>
+</body>
+</html>

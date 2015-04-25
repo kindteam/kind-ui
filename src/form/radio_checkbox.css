@@ -1,0 +1,13 @@
+.k-radio-group{
+    display: inline-block;
+
+    font-size: 14px;
+}
+.k-radio-group label{
+    padding-right: 20px;
+
+}
+.k-radio-group label input{
+    margin-right: 5px;
+
+}

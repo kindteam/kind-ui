@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../src/kindui.css">
+    <link type="text/css" rel="stylesheet" href="css/doc.css">
+</head>
+<body>
+
+<div id="rs">
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+
+<style>
+    .outer {
+        width: 50px;
+        height: 50px;
+        border: 1px dashed green;
+    }
+
+    .inner  {
+        width: 30px;
+        height: 30px;
+        border: 1px dashed red;
+        font-size: 12px;
+    }
+</style>
+<script>
+    var Conf = {
+        title:'分页箭头',
+        headCols: [
+            {
+                text: '显示效果'
+            },
+            {
+                text: 'code'
+            },
+            {
+                text: '简介'
+            }
+        ],
+        body: [
+            [
+                {
+                    text:   '<div class="k-btn-group">' +
+                            '<div class="k-btn k-btn-arrow-left"></div>' +
+                            '<div class="k-btn k-btn-arrow-right"></div>' +
+                            '<div class="k-btn k-btn-arrow-up"></div>' +
+                            '<div class="k-btn k-btn-arrow-down"></div>' +
+                            '</div>',
+                    strip: false
+                },
+                {
+                    text: function() {
+                        /*
+                         <div class="k-btn-group"> 
+                             <div class="k-btn k-btn-arrow-left"></div>
+                             <div class="k-btn k-btn-arrow-right"></div>
+                             <div class="k-btn k-btn-arrow-up"></div>
+                             <div class="k-btn k-btn-arrow-down"></div>
+                         </div>
+                         */
+                    },
+                    code:true,
+                    strong: [['(k-btn-arrow-\\w+)','$1'] ]
+                },
+                {
+                    text:'分页箭头'
+                }
+            ]
+        ],
+        onRendered: function ($table) {
+
+            $('#rs').append($table);
+
+        }
+    };
+
+    var $colorTable = parseTable(Conf);
+
+
+</script>
+</body>
+</html>

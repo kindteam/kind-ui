@@ -1,0 +1,99 @@
+.header {
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    background-color: #0ae;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    text-indent: 20px;
+    color: #fff;
+    opacity: .8;
+}
+.dash{
+    border: 1px dashed #ccc;
+}
+.content {
+    position: relative;
+}
+
+.nav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 130px;
+    padding-top: 20px;
+    font-family: tahoma, arial, 微软雅黑, 宋体;
+}
+
+.list-block {
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 10px;
+}
+
+.nav li {
+    position: relative;
+    padding-left: 20px;
+    height: 32px;
+    line-height: 32px;
+    transition: all 600ms ease;
+}
+.nav li[often]:before {
+    content: '*';
+    position: absolute;
+    top: 0;
+    left: 11px;
+    color: red;
+}
+.nav .li-section-blue,
+.nav .li-section-green,
+.nav .li-section-orange{
+    position: relative;
+}
+.nav .li-section-blue:before,
+.nav .li-section-green:before,
+.nav .li-section-orange:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+}
+.nav .li-section-blue:before{
+    background: #00bbee;
+}
+
+.nav .li-section-green:before{
+    background: #00a757;
+}
+.nav .li-section-orange:before{
+    background: #ff8208;
+}
+
+
+
+.nav li.selected a {
+    color: #0ae;
+}
+
+.nav li:hover {
+    background: #eaeaea;
+}
+
+.nav li a {
+    color: #808080;
+    display: block;
+}
+
+.view {
+    margin-left: 130px;
+    padding-left: 20px;
+    min-height: 600px;
+    border-left: 1px solid #e7e7eb;;
+
+}
+
+.view iframe {
+    width: 100%;
+    height: 100%;
+}

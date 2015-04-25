@@ -1,0 +1,31 @@
+.fn-clear:after {
+    display: block;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+    content: " ";
+    clear: both;
+}
+.fn-clear {
+    zoom: 1; /* for IE6 IE7 */
+}
+
+.fn-hide {
+    display: none;
+}
+
+/* 设置内联, 减少浮动带来的bug */
+/*在IE下，当一个div设置了float后，然后给他设置margin，*/
+/*就会出现加倍的margin，解决的办法是给div设置 display:inlsine。*/
+.fn-left,
+.fn-right {
+    display: inline;
+}
+
+.fn-left {
+    float: left;
+}
+
+.fn-right {
+    float: right;
+}

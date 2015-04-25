@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--<meta charset="gbk">-->
+    <title></title>
+    <script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script>
+
+    function toBody(content) {
+        var d = document.createElement('div');
+        d.innerHTML = content;
+        document.body.appendChild(d);
+    }
+
+
+    //get 字段默认是用utf-8进行编码
+    //get.php?a=%E5%95%8A
+    $.ajax({
+        url:'get_utf8.php',
+        data:{
+            a:'啊'
+        }
+    }).done(function(e) {
+        toBody('get_utf8.php:' + e)
+    });
+
+    //返回乱码
+    $.ajax({
+        url:'get_gbk.php',
+        data:{
+            a:'啊'
+        }
+    }).done(function(e) {
+        toBody('get_gbk.php:' + e)
+    });
+
+    //post 字段默认是用utf-8编码
+    //a=%E5%95%8A
+//        $.ajax({
+//            url:'get.php',
+//            method:'POST',
+//            data:{
+//                a:'啊'
+//            }
+//        });
+
+
+    //请求的页面是gbk编码的，返回乱码
+//    $.ajax({
+//        url:'get_gbk.php',
+//        data:{
+//            a:'啊'
+//        }
+//    }).done(function(e) {
+//        console.log('get_gbk.php:' + e)
+//    });
+
+    //请求的页面是gbk编码的，返回乱码
+//    $.ajax({
+//        url:'get_gbk.php',
+//        //这个是添加到请求头里面
+//        contentType:'application/x-www-form-urlencoded; charset=GBK',
+//        data:{
+//            a:'啊'
+//        }
+//    }).done(function(e) {
+//        console.log('get_gbk.php:' + e)
+//    });
+
+
+
+
+</script>
+</body>
+</html>
