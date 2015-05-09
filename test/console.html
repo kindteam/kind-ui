@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //console-polyfill
+    (function(global) {
+        'use strict';
+        global.console = global.console || {};
+        var con = global.console;
+        var prop, method;
+        var empty = {};
+        var dummy = function() {};
+        var properties = 'memory'.split(',');
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+        'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+        'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while (prop = properties.pop()) if (!con[prop]) con[prop] = empty;
+        while (method = methods.pop()) if (!con[method]) con[method] = dummy;
+    })(typeof window === 'undefined' ? this : window);
+</script>
+
+<script>
+//    debugger;
+
+    //    console.trace方法显示当前执行的代码在堆栈中的调用路径。
+    console.trace();
+
+//    监听特定对象上发生的特定事件。当这种情况发生时，
+//    会返回一个Event对象，包含该事件的相关信息
+//    monitorEvents(window, "resize");
+//    monitorEvents(window, ["resize", "scroll"])
+//    monitorEvents(window, 'key')
+//    mouse："mousedown", "mouseup", "click", "dblclick", "mousemove", "mouseover", "mouseout", "mousewheel"
+//    key："keydown", "keyup", "keypress", "textInput"
+//    touch："touchstart", "touchmove", "touchend", "touchcancel"
+//    control："resize", "scroll", "zoom", "focus", "blur", "select", "change", "submit", "reset"
+
+    var o = {
+        name:'tom',
+        age:25
+    }
+
+
+    console.log("log")
+    console.info("info")
+    console.error("error")
+    console.dir(o);
+
+    console.log(document.body) //HTML DOM
+    console.dir(document.body) //DOM
+
+    // 这个方法经常用
+//    %s 字符串
+//    %d 整数
+//    %i 整数
+//    %f 浮点数
+//    %o 对象的链接
+//    %c CSS格式字符串
+
+
+    console.log(o);
+
+    console.log(" %s + %s = %s", 1, 1, 2)
+
+    //无法显示小数
+    console.log(" %d + %d = %d", 1, 1, 2.22)
+
+    //可以显示小数
+    console.log(" %f + %f = %f", 1.222, 1.222, 2.444)
+
+    console.log("tom: %o end.", o)
+
+    console.log('%d %s balloons', 11, 'red');
+
+    //style
+    console.log("%c name is %ctom", 'color:red', 'color:green;font-size:16px')
+
+    console.log(" %s + %s ", 1, 1, "= 2")
+
+    console.log("a+",'b', "=c");
+
+    console.log('a','b','c',11);
+
+    +(function() {
+
+        var log = console.log;
+        console.log = function() {
+            var args = [];
+            for(var i = 0, len = arguments.length; i < len; i++) {
+                args.push(arguments[i]);
+            }
+            args.unshift('%c' + new Date().toLocaleString() + ':', 'color:green');
+            log.apply(console, args);
+        }
+    })();
+
+    console.log('after');
+
+
+    var languages = [
+        { name: "JavaScript", fileExtension: ".js" },
+        { name: "TypeScript", fileExtension: ".ts" },
+        { name: "CoffeeScript", fileExtension: ".coffee" }
+    ];
+
+    console.table(languages);
+
+//    只有当第一个参数为false，才会输出第二个参数
+    console.assert(true === true, "判断条件不成立")
+
+
+    console.time("Array initialize");
+    var array= new Array(1000000);
+    for (var i = array.length - 1; i >= 0; i--) {
+        array[i] = new Object();
+    };
+    console.timeEnd("Array initialize");
+
+
+    console.groupCollapsed('Fetching Data');
+
+    console.log('Request Sent');
+    console.log('Error: Server not responding (500)');
+
+    console.groupEnd();
+
+</script>
+</body>
+</html>

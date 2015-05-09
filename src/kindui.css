@@ -4,6 +4,8 @@
 /*   reset   */
 @import url("reset.css");
 @import url("base.css");
+@import url("browser-hack.css");
+
 
 /*   iconfont   */
 @import url(iconfont.css);

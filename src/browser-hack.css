@@ -1,0 +1,2 @@
+/*取消IE10 IE11 文本框自带样式， 测试提为样式bug*/
+input::-ms-clear{display:none;}
